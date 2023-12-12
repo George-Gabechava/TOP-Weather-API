@@ -50,8 +50,6 @@ async function getWeather(location){
         const docCondition = document.getElementById("condition");
         docCondition.innerText = "Condition: " + condition;
 
-        console.log("OG", condition);
-
         const docSunrise = document.getElementById("sun");
         docSunrise.innerText = "Sun: " + sunrise + " - " + sunset;
 
@@ -69,30 +67,16 @@ async function getWeather(location){
 const img = document.querySelector('img');
 
 async function getGif(condition) {
-    console.log(condition);
     try {
         const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=hvXblNAp9zDEpZdZE47lqN5gzpDAGTvy&s=${condition}`, {mode: 'cors'})
         const catData = await response.json();
         img.src = catData.data.images.original.url;
 
-
+        img.style.display = "block";
         return;
-
-    
-    // else {
-    //   const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=hvXblNAp9zDEpZdZE47lqN5gzpDAGTvy&s=${currentSearchValue}`, {mode: 'cors'})
-    //   const catData = await response.json();
-    //   img.src = catData.data.images.original.url;
-
-    //     if (searchAmount > 9) {
-    //         document.body.append(" ok go back to studying >:) ");
-    //     }
-    // }
     }
     //If error
     catch(err) {
         console.log("Ruh Roh", err.name);
     }
 };
-
-getWeather();
