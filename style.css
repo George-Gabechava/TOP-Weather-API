@@ -1,0 +1,50 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+
+    min-height: 100vh;
+
+}
+
+#tempContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#hero {
+    display: flex;
+    width: 100%;
+    background-color: skyblue;
+
+    justify-content: center;
+}
+
+#findWeatherBtn {
+    width: 40vw;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+#searchBarW {
+    width: 70vw;
+    margin: 30px;
+}
+
+#foot {
+    display: flex;
+    width: 100%;
+    background-color: burlywood;
+    padding-bottom: 15px;
+
+    justify-content: center;
+}
